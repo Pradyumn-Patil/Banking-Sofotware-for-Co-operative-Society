@@ -206,7 +206,7 @@ public class Account extends javax.swing.JFrame {
         jLabel16.setIcon(new javax.swing.ImageIcon("C:\\Users\\Win 10 Pc\\Documents\\NetBeansProjects\\OOPCP\\Images\\New_Account.png")); // NOI18N
 
         NewAccReligionComboBox.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        NewAccReligionComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hindu", "Muslim", "Christian", "Sikh", "Other" }));
+        NewAccReligionComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hindu", "Muslim", "Buddhist", "Christian", "Sikh", "Other" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -367,7 +367,7 @@ public class Account extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 690, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 690, Short.MAX_VALUE)
         );
 
         setSize(new java.awt.Dimension(817, 737));
@@ -458,7 +458,7 @@ public class Account extends javax.swing.JFrame {
 
     private void newAccCreateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newAccCreateButtonActionPerformed
         // Create button
-        if(NewAccTFFirstName.getText().equals("") || NewAccTFLastName.getText().equals("") || NewAccTFMobNo.getText().equals("") || ((String)NewAccReligionComboBox.getSelectedItem()).equals("") || ((String)NewAccGenderComboBox.getSelectedItem()).equals("") || ((JTextField)NewAccDateChooser.getDateEditor().getUiComponent()).getText().equals("") || NewAccTFAadharNo.getText().equals("") || NewAccTFInitialAmount.getText().equals("") || NewAccTFPin.getText().equals("") || NewAccTFAddress.getText().equals("") || ((String)NewAccDesignationComboBox.getSelectedItem()).equals("")) {
+        if(NewAccTFFirstName.getText().equals("") || NewAccTFLastName.getText().equals("") || NewAccTFMobNo.getText().equals("") || ((String)NewAccReligionComboBox.getSelectedItem()).equals("") || ((String)NewAccGenderComboBox.getSelectedItem()).equals("") || ((JTextField)NewAccDateChooser.getDateEditor().getUiComponent()).getText().equals("") || NewAccTFAadharNo.getText().equals("")  || NewAccTFAadharNo.getText().length() != 12 || NewAccTFInitialAmount.getText().equals("") || NewAccTFPin.getText().equals("") || NewAccTFAddress.getText().equals("") || ((String)NewAccDesignationComboBox.getSelectedItem()).equals("")) {
             JOptionPane.showMessageDialog(null, "Please fill all required fields");
         } else {
             String sql = "insert into account(Acc_No,First_Name,Last_Name,Religion,Mobile_No,Gender,DOB,Aadhar_No,Baseline_Bal,IFSC_Code,Pin,Address,Date_of_Interest,Designation,Pay_Date) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
